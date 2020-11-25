@@ -1,0 +1,108 @@
+[colors]
+pink = #f7a8b8
+blue = #55cdfc
+
+[bar/background]
+monitor = HDMI-0
+radius = 16
+height = 32
+font-0 = "Fira Code:pixelsize=12;0"
+width = 2496
+offset-y = 8
+offset-x = 32
+padding-left = 8
+padding-right = 8
+background = #ffffff
+foreground = #444444
+
+modules-center = time
+
+[bar/bspwm]
+monitor = HDMI-0
+radius = 16
+font-0 = "Fira Code:pixelsize=12;0"
+height = 32
+width = 256
+offset-y = 8
+offset-x = 32
+
+background = ${colors.pink}
+
+modules-center = bspwm
+
+[bar/pulse]
+monitor = HDMI-0
+radius = 16
+font-0 = "Fira Code:pixelsize=12;0"
+height = 32
+width = 128
+offset-y = 8
+offset-x = 312
+
+background = ${colors.pink}
+
+modules-center = pulse
+
+[bar/mpc]
+monitor = HDMI-0
+radius = 16
+font-0 = "Fira Code:pixelsize=12;0"
+height = 32
+width = 768
+offset-y = 8
+offset-x = 1484
+
+background = ${colors.pink}
+
+modules-center = mpc
+
+[bar/notifs]
+enable-ipc = true
+radius = 16
+font-0 = "Fira Code:pixelsize=12;0"
+height = 32
+width = 64
+offset-y = 8
+offset-x = 2048
+
+bacgkround = ${colors.pink}
+
+modules-center = dunst
+
+[module/time]
+type = internal/date
+
+interval = 1.0
+
+time = %I:%M %p
+label = %time%
+
+[module/bspwm]
+type = internal/bspwm
+enable-click = true
+
+label-focused = "  ●  "
+label-empty = "  ○  "
+label-occupied = "  ○  "
+
+[module/pulse]
+type = internal/pulseaudio
+interval = 1
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-foreground = #fff
+
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}A%{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}B%{A}" &
+
+[module/mpc]
+type = custom/script
+interval = 1
+
+exec = mpc | head -n 1 | cut -c -64
+click-left = mpc toggle
+
+scroll-down = mpc next
+scroll-up = mpc prev

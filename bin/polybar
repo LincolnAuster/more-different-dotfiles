@@ -1,0 +1,6 @@
+#!/bin/bash
+
+polybar background & sleep 0.5
+polybar bspwm &
+polybar pulse &
+polybar mpc &
