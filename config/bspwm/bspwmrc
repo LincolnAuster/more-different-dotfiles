@@ -18,6 +18,7 @@ xrdb ~/.Xresources &
 picom &
 feh --bg-fill ~/flag.png &
 /home/lincolna/bin/polybar &
+dunst &
 
 /home/lincolna/bin/floating.sh &
 # bspc rule -a Gimp desktop='^8' state=floating follow=on

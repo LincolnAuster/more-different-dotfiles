@@ -16,7 +16,7 @@ export UPDATE_ZSH_DAYS=32
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # DISABLE_AUTO_TITLE="false"
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -34,5 +34,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export PATH="$PATH:$HOME/bin"
+
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
 pridefetch -f trans

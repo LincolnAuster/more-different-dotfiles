@@ -2,16 +2,6 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
-super + Return
-	st
-
-# program launcher
-super + @space
-	rofi -show run
-super + e
-	rofi -show emoji
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -128,6 +118,8 @@ super + {Left,Down,Up,Right}
 
 super + s
 	brave --app="https://web.skype.com"
+
+# mpc
 super + a
 	mpc play
 super + v
@@ -136,3 +128,20 @@ super + z
 	mpc next
 super + shift + @space
 	mpc toggle
+
+# dunst
+super + shift + m
+	dunstctl action
+
+# st
+super + Return
+	st
+
+# rofi stuff
+super + @space
+	rofi -show run
+super + e
+	rofi -show emoji
+super + shift + e
+	rofi -show calc
+

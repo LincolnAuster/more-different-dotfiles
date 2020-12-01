@@ -6,7 +6,7 @@ blue = #55cdfc
 monitor = HDMI-0
 radius = 16
 height = 32
-font-0 = "Fira Code:pixelsize=12;0"
+font-0 = "Iosevka:pixelsize=12;0"
 width = 2496
 offset-y = 8
 offset-x = 32
